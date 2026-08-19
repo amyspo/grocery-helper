@@ -1,12 +1,9 @@
-import { useState } from 'react'
+import { meals } from "./data/meals";
 
-import './App.css'
+import "./App.css";
 
 function App() {
-
-  return (
-    <>Hello World</>
-  )
+  return <h1>Grocery Helper</h1>;
 }
 
-export default App
+export default App;
