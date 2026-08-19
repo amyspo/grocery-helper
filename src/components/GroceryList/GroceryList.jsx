@@ -5,15 +5,18 @@ function GroceryList({ chosenMeals }) {
   const selectedMeals = meals.filter((meal) => chosenMeals.includes(meal.id));
 
   return (
-    <ul>
-      {selectedMeals.map((meal) => (
-        <>
-          {meal.ingredients.map((ingredient) => (
-            <li>{ingredient.name}</li>
-          ))}
-        </>
-      ))}
-    </ul>
+    <>
+      {chosenMeals.length === 0 && <p>No Meals Chosen</p>}
+      <ul>
+        {selectedMeals.map((meal) => (
+          <>
+            {meal.ingredients.map((ingredient) => (
+              <li>{ingredient.name}</li>
+            ))}
+          </>
+        ))}
+      </ul>
+    </>
   );
 }
 
