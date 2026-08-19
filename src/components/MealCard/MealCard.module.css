@@ -1,0 +1,27 @@
+li {
+    border-bottom: 1px solid lightgrey;
+    list-style: none;
+}
+
+ul {
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+h4 {
+    padding: 1em;
+    margin: 0;
+}
+
+input {
+    margin: 1em;
+}
+
+li:last-child {
+  border-bottom: none;
+}
