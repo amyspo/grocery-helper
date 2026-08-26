@@ -21,12 +21,32 @@ function GroceryList({ chosenMeals }) {
     }
   });
 
+  const finalIngredients = [];
+
+  selectedIngredients.forEach((testIngredient) => {
+    const finalIngredient = finalIngredients.find(
+      (finalIngredient) => finalIngredient.name === testIngredient.name,
+    );
+    if (finalIngredient) {
+      finalIngredient.quantity =
+        finalIngredient.quantity + testIngredient.quantity;
+    } else {
+      finalIngredients.push({
+        name: testIngredient.name,
+        quantity: testIngredient.quantity,
+        type: testIngredient.type,
+        unit: testIngredient.unit,
+      });
+    }
+    console.log(finalIngredient);
+  });
+
   return (
     <>
       {chosenMeals.length === 0 && <p>No Meals Chosen</p>}
       <ul>
-        {selectedIngredients.map((ingredient) => (
-          <GroceryItem ingredient={ingredient} />
+        {finalIngredients.map((ingredient, index) => (
+          <GroceryItem key={index} ingredient={ingredient} />
         ))}
       </ul>
     </>
