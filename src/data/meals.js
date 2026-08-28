@@ -17,7 +17,7 @@ export const meals = [
       },
       {
         name: "Ei",
-        quantity: 2,
+        quantity: 4,
         unit: "Stück",
         type: "Tierprodukt",
       },

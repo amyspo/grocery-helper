@@ -1,0 +1,13 @@
+.checked {
+    text-decoration: line-through;
+}
+
+.item {
+    padding: 1rem;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
