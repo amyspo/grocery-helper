@@ -38,7 +38,6 @@ function GroceryList({ chosenMeals }) {
         unit: testIngredient.unit,
       });
     }
-    console.log(finalIngredient);
   });
 
   return (

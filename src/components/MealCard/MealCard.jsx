@@ -7,16 +7,17 @@ function MealCard() {
   const [chosenMeals, setChosenMeals] = React.useState([]);
   const [listView, setListView] = React.useState(false);
 
-  function getID(id) {
+  function collectIDs(id) {
     const nextMeals = [...chosenMeals];
     if (nextMeals.includes(id)) {
       const newMeals = nextMeals.filter((n) => n !== id);
       setChosenMeals(newMeals);
       return;
-    } else nextMeals.push(id);
-
-    setChosenMeals(nextMeals);
-    console.log(chosenMeals);
+    } else {
+      nextMeals.push(id);
+      setChosenMeals(nextMeals);
+      return;
+    }
   }
 
   function handleClick() {
@@ -40,7 +41,7 @@ function MealCard() {
                   id={meal.id}
                   type="checkbox"
                   onChange={() => {
-                    getID(meal.id);
+                    collectIDs(meal.id);
                   }}
                 />
               </div>
